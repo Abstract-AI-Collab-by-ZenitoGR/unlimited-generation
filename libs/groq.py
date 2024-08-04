@@ -28,7 +28,7 @@ async def groq_response(messages, max_tokens=8192):
 
     chat_completion = await client.chat.completions.create(
         messages=messages,
-        model="mixtral-8x7b-32768",
+        model="llama3-8b-8192",
         temperature=0.9,
         max_tokens=max_tokens,
         top_p=1,

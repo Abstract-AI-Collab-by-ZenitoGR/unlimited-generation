@@ -5,15 +5,15 @@ import asyncio
 load_dotenv()
 
 
-def main():
+async def main():
     unlimited = unlimitedgen()
     while True:
-        user_input = input("Enter your message: ")
+        user_input = input("Enter your message (type exit to stop): ")
         if user_input == "exit":
             break
         #print(f"You entered: {user_input}")
-        asyncio.run(unlimited.gen(user_input))
+        await unlimited.gen(user_input)
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
